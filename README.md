@@ -2,10 +2,10 @@
 
 ### 3. Median Blurring
 
-The Median blur operation is similar to the other averaging methods. Here, the function `cv.medianBlur()` takes the median of all the pixels under the kernel area and the central element is replaced with this median value. This is highly effective against salt-and-pepper noise in an image. But in median blurring, the central element is always replaced by some pixel value in the image. It reduces the noise effectively. Its kernel size should be a positive odd integer. This operation processes the edges while removing the noise.
+The Median blur operation is same as the other averaging methods. The function `cv.medianBlur()` takes the median of all the pixels in the kernel area. Then the central element is replaced with the median value. This is very fruitful against salt-and-pepper noise in an image. But in this type of method, the central element is always replaced by some pixel value in the image. this operqation reduces the noise effectively. The kernel size given should be a positive odd integer. The process processes the edges while removing the noise.
 
 
-In this demo, I added a 50% noise to our original image and applied median blurring. Check the result:
+In this demo, we have added a 50% noise to the original image and applied median blurring. Check the result:
 
 
 ```python
@@ -13,16 +13,21 @@ median = cv.medianBlur(img,5)
 ```
 
 Result:
-![sample_image](https://user-images.githubusercontent.com/78999231/125315439-c235dd00-e354-11eb-9718-e59106a88285.jpg)
-![median_blur](https://user-images.githubusercontent.com/78999231/125315456-c6fa9100-e354-11eb-9b15-134f4aa9064a.jpg)
+
+![Opencv](https://user-images.githubusercontent.com/78999231/125387969-512a1000-e3bc-11eb-8a8e-40d680a6ced1.jpeg)
+![medianBlur](https://user-images.githubusercontent.com/78999231/125388271-da414700-e3bc-11eb-9ecf-6fa8a918867f.jpg)
 
 
 ### 4. Biletral Filtering
 
-So far, we have explained some filters which main goal is to smooth an input image. However, sometimes the filters do not only dissolve the noise, but also smooth away the edges. To avoid this (at certain extent at least), we can use a bilateral filter. `cv.bilateralFilter()` is highly effective in noise removal while keeping edges sharp. But the operation is slower compared to other filters. It doesn't consider whether a pixel is an edge pixel or not. So it blurs the edges also, which we don't want to do.
+Till now, we have explained you some filters whose main goal is to smooth an image which a user inputs. However, sometimes these filters not only dissolve the noise, but also smooth the edges. For avoiding this, we use a bilateral filter. `cv.bilateralFilter()` is very fruitul in noise removal by keeping the edges sharp. But this operation is slower as compared to other filters used. It does not consider if a pixel is an edge pixel or not. So, it blurs the edges.
 
 ```python
 blur = cv.bilateralFilter(img,9,75,75)
 ```
 
-![image](https://user-images.githubusercontent.com/78999231/125316735-0675ad00-e356-11eb-8781-608ce6ac4098.png)
+Result:
+
+![Opencv](https://user-images.githubusercontent.com/78999231/125387969-512a1000-e3bc-11eb-8a8e-40d680a6ced1.jpeg)
+![download](https://user-images.githubusercontent.com/78999231/125388740-aca8cd80-e3bd-11eb-89b6-2777eeb5099b.png)
+
