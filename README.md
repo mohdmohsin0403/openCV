@@ -1,5 +1,10 @@
 # OpenCV
 
+### Filtering
+
+Image filtering is the process of modifying an image by changing its shades or color of the pixel or by increasing the brightness and contrast of that image. In the image processing filters, which are mainly used to suppress either the high frequencies in the image (i.e. image smoothing), or the low frequencies (i.e. enhancing or detecting edges in the image used).
+OpenCV provides a function called `cv.filter2D()` to convolute a kernel with an image. 
+
 ### 3. Median Blurring
 
 The Median blur operation is same as the other averaging methods. The function `cv.medianBlur()` takes the median of all the pixels in the kernel area. Then the central element is replaced with the median value. This is very fruitful against salt-and-pepper noise in an image. But in this type of method, the central element is always replaced by some pixel value in the image. this operqation reduces the noise effectively. The kernel size given should be a positive odd integer. The process processes the edges while removing the noise.
